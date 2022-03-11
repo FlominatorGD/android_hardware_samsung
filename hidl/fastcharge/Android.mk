@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2020-2021 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    FingerprintInscreen.cpp \
+    FastCharge.cpp \
     service.cpp
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
+LOCAL_C_INCLUDES := \
+    $(LOCAL_PATH)/include \
 
 LOCAL_SHARED_LIBRARIES := \
     libbase \
-    libhardware \
+    libbinder \
+    libcutils \
     libhidlbase \
-    liblog \
-    libhwbinder \
     libutils \
-    vendor.lineage.biometrics.fingerprint.inscreen@1.0
+    vendor.lineage.fastcharge@1.0
 
-LOCAL_MODULE := vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.samsung
-LOCAL_INIT_RC := vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.samsung.rc
+LOCAL_MODULE := vendor.lineage.fastcharge@1.0-service.samsung
+LOCAL_INIT_RC := vendor.lineage.fastcharge@1.0-service.samsung.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := samsung
-LOCAL_VINTF_FRAGMENTS := vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.samsung.xml
+LOCAL_VINTF_FRAGMENTS := vendor.lineage.fastcharge@1.0-service.samsung.xml
 LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_EXECUTABLE)

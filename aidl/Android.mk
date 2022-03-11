@@ -14,28 +14,4 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
-
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-    Light.cpp \
-    service.cpp
-
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/include
-
-LOCAL_SHARED_LIBRARIES := \
-    libbase \
-    libbinder \
-    libhidlbase \
-    libutils \
-    android.hardware.light@2.0
-
-LOCAL_MODULE := android.hardware.light@2.0-service.samsung
-LOCAL_INIT_RC := android.hardware.light@2.0-service.samsung.rc
-LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := samsung
-LOCAL_VENDOR_MODULE := true
-
-include $(BUILD_EXECUTABLE)
+#include $(call all-subdir-makefiles)
