@@ -26,6 +26,7 @@ LOCAL_SHARED_LIBRARIES := \
     libbase \
     libhardware \
     libhidlbase \
+    libhidltransport \
     liblog \
     libutils \
     android.hardware.biometrics.fingerprint@2.1
@@ -50,5 +51,3 @@ LOCAL_MODULE_OWNER := samsung
 LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_EXECUTABLE)
-
-include $(call all-makefiles-under,$(LOCAL_PATH))
